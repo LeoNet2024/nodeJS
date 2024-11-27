@@ -4,7 +4,7 @@
 
 ## To do list:
 
--Add links to my website
+- Add links to my website
 - Add pictures to my web
 - other
 
