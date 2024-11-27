@@ -13,6 +13,7 @@
   -[google](https://www.google.com)
 
 
+![Pictures](https://upload.wikimedia.org/wikipedia/commons/9/97/The_Earth_seen_from_Apollo_17.jpg)
   ```
   const name = "leon";
   let age  = 19;
