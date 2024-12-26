@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    body {
+      background-color: rgb(221, 245, 245);
+      text-transform: uppercase;
+      font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+        sans-serif;
+
+      text-align: center;
+    }
+    body h1 {
+      color: rgb(61, 132, 132);
+    }
+    .book {
+      width: 60vb;
+      max-width: 1300px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      border: 1px rgb(146, 146, 144) solid;
+      flex: 1;
+    }
+
+    .headerBook {
+      background: rgb(203, 203, 198);
+      display: flex;
+      flex-direction: row;
+    }
+
+    .headerBook p {
+      font-size: 10px;
+      text-align: right;
+    }
+
+    .headerBook h2 {
+      background-color: black;
+      color: white;
+    }
+
+    .book .author {
+      background: rgb(203, 203, 198);
+      text-align: right;
+    }
+
+    .middleBook {
+      font-size: 8vh;
+      background-color: white;
+      text-align: right;
+    }
+
+    .endofbook {
+      background-color: yellow;
+    }
+
+    .endofbook h2 {
+      font-size: 80px;
+      text-align: center;
+    }
+  </style>
+  <body>
+    <header><h1>book component by function</h1></header>
+    <main class="book">
+      <div class="headerBook">
+        <h2>o'reilly</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem
+          nesciunt amet tempore iusto. Nisi asperiores perferendi
+        </p>
+      </div>
+      <div class="author">
+        <h2>KYLE SIMPSON</h2>
+      </div>
+
+      <div class="middleBook">
+        <p>Async & Performance</p>
+      </div>
+
+      <div class="endofbook">
+        <h2>JS</h2>
+      </div>
+    </main>
+    <h2>by kyle simpson</h2>
+    <p>
+      This is a book about JavaScript, programming, and the wonders of the
+      digital. You can read it online here, or buy your own paperback copy.
+    </p>
+    <footer>
+      <p>&copy;2024 leon gitelman neo zino</p>
+    </footer>
+  </body>
+</html>
