@@ -5,6 +5,8 @@ const logger = require("./logger");
 const fs = require("fs");
 const pageNotFound = fs.readFileSync("./pageNotFound.html");
 
+//יש חשיבות לסדר ויש חשיבות לאיזה מסלול זה מתייחס 
+
 const app = express();
 
 const port = process.env.PORT || 3000;
