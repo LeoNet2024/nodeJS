@@ -1,28 +1,37 @@
-const express = require('express');
-const dbSingleton = require('../db.singleton');
-const router = express.Router();
+//routes/products.js
 
-const db = dbSingleton.getConnection();
+const router = require("./user");
 
-router.get('/', (req, res) => {
-  const query = `SELECT * FROM products`;
-  db.query(query, (err, results) => {
-    if (err) {
-      res.status(500).send(err);
-      return;
+router.get("/", (req, res, next) => {
+  try {
+    const { limit } = req.query;
+
+    // Check the limit parameter
+    if (limit && isNaN(limit)) {
+      return res
+        .status(400)
+        .json({ error: 'Parameter "limit" must be a number' });
     }
-    res.json(results);
-  });
+
+    // Main logic
+    const query = limit
+      ? "SELECT * FROM products LIMIT ?"
+      : "SELECT * FROM products";
+
+    const params = limit ? [parseInt(limit, 10)] : [];
+
+    db.query(query, params, (err, results) => {
+      if (err) {
+        // Pass the error to the error handler
+        return next(err);
+      }
+
+      res.json(results);
+    });
+  } catch (error) {
+    // Pass synchronous errors to the error handler
+    next(error);
+  }
 });
 
-router.post('/', (req, res) => {
-  const { id, name, price } = req.body;
-  const query = `INSERT INTO products (id, name, price) VALUES (?,?,?)`;
-  db.query(query, [id, name, price], (err, results) => {
-    if (err) {
-      res.status(500).send(err);
-      return;
-    }
-    res.json({ message: 'user added!', id: results.insertId });
-  });
-});
+module.exports = router;
